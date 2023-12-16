@@ -47,7 +47,7 @@ a {
 /* utility classes */
 .container{
     max-width: 992px;
-    width: 80%;
+    width: 90%;
     margin-inline: auto;
     @media  and (max-width: 521px) {
         max-width: 521px;
@@ -504,9 +504,6 @@ pre-built animated coffee machine from codepen
 .card {
 	border-radius: 0.2rem;
 	max-width: 210px;
-	@media  screen and (max-width: 521px) {
-		max-width: 320px;
-	}
 }
 .information {
 	background-color: var(--white);
@@ -760,10 +757,16 @@ footer {
 // media quesries
 @media screen and (max-width: 521px) {
   .cards {
-    margin-top: 13rem;
+    display: flex;
+    flex-direction: column;
+    margin-top: 1.5rem;
+    align-items: center;
     max-width: 521px;
     width: 100%;
     margin-inline: auto;
+    .card {
+      max-width: 380px !important;
+    }
   }
   .flex-row-sb {
     flex-direction: column;
@@ -800,11 +803,48 @@ footer {
       font-weight: 600;
   }
 }
-@media screen and (max-width: 1069px) {
+@media screen and (max-width: 720px) {
+  .grid {
+    display: flex;
+    flex-direction: column;
+  }
+  .flex-row-sb {
+    flex-direction: column;
+  }
+  .flex-row {
+    flex-direction: column;
+  }
+  header {
+    margin-bottom: 17.8rem;
+  }
+}
+@media screen and (max-width: 991px) {
   .cards {
-    flex-direction: row;
+    display: flex;
+    align-items: stretch;
+    max-width: 100%;
+    width: 100%;
+    padding: 1rem;
+    gap: 1rem;
+    .card {
+      max-width: 30rem;
+      max-height: 20rem;
+      flex: 1;
+    }
   }
   .grid {
-
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 30% 30% 40%;
+    grid-template-areas:
+    "main  main"
+    "aside aside"
+    "tile  tile";
+    margin-top: 2rem;
+    .grid-two-col {
+      padding-top: 2rem;
+    }
+    .flex-row {
+      padding-top: 1rem;
+    }
   }
 }
